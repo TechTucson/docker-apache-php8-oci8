@@ -1,5 +1,5 @@
 # techtucson/apache-php8-oci8
-Docker image with apache, PHP 8 and oci8
+Docker image with apache, PHP 8 and OCI8
 
 
 ### Versioning
@@ -22,11 +22,9 @@ To pull from docker hub:
 docker pull techtucson/apache_php8.3_oci8_v21.13:latest
 ```
 
-### Running
+### Sample Usage
 
-Run the container:
-
-
+[https://github.com/TechTucson/docker-apache-php8-oci8/tree/main/sample](https://github.com/TechTucson/docker-apache-php8-oci8/tree/main/sample)
 
 Author
 -------
