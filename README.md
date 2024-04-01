@@ -1,21 +1,15 @@
-# paliari/apache-php8-oci8
+# techtucson/apache-php8-oci8
 Docker image with apache, PHP 8 and oci8
 
-> Images with *dev* suffix contains everything in *pro* and some other requirements for development like composer
 
 ### Versioning
-| Docker Tag        | Apache Version | PHP Version | Debian Version |
-|-------------------|----------------|-------------|----------------|
-| 1.3.0-pro         | 2.4.38         | 8.1.*       | GNU/Linux 10   |
-| 1.2.0-pro         | 2.4.38         | 8.0.*       | GNU/Linux 10   |
-| 1.2.0-dev-pcov    | 2.4.38         | 8.0.*       | GNU/Linux 10   |
-| 1.1.0-pro         | 2.4.38         | 8.0.1       | GNU/Linux 10   |
-| 1.1.0-dev         | 2.4.38         | 8.0.1       | GNU/Linux 10   |
-| 1.1.0-dev-xdebug  | 2.4.38         | 8.0.1       | GNU/Linux 10   |
+| Docker Tag        | Apache Version | PHP Version | Debian Version |Debian Version |
+|-------------------|----------------|-------------|----------------|---------------|
+|       NONE        | 2.4.38         | 8.3.4       | GNU/Linux 10   | 21.13         |
 
 ### Links
-- [https://github.com/paliari-ti/docker-apache-php8-oci8](https://github.com/paliari-ti/docker-apache-php8-oci8)
-- [https://hub.docker.com/r/paliari/apache-php8-oci8](https://hub.docker.com/r/paliari/apache-php8-oci8)
+- [https://github.com/TechTucson/docker-apache-php8-oci8](https://github.com/TechTucson/docker-apache-php8-oci8)
+- [https://hub.docker.com/repository/docker/techtucson/apache_php8.3_oci8_v21.13](https://hub.docker.com/repository/docker/techtucson/apache_php8.3_oci8_v21.13)
 
 
 ## Build
@@ -32,11 +26,9 @@ docker pull
 
 Run the container:
 
-```
-docker container run -p 80:80 -v $(pwd):/var/www/html -d paliari/apache-ssl-php8-oci8:1.3.0-dev
-```
+docker push techtucson/apache_php8.3_oci8_v21.13:tagname
 
 Author
 -------
 
--	[Daniel Fernando Lourusso](http://dflourusso.com.br)
+-	[Mario Uribe](http://techtucson.com)
