@@ -6,3 +6,7 @@ This docker file will create an image using the Docker Hub image as our base. It
 docker -t build test .
 ## To run this container 
 docker run -d --name app1 -p 8090:80 test
+## Verify 
+https://localhost:8090
+### Check PHP Info
+https://localhost:8090/info.php
