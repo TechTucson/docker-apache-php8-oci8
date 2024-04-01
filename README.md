@@ -19,14 +19,14 @@ Docker image with apache, PHP 8 and oci8
 To pull from docker hub:
 
 ```
-docker pull
+docker pull techtucson/apache_php8.3_oci8_v21.13:latest
 ```
 
 ### Running
 
 Run the container:
 
-docker push techtucson/apache_php8.3_oci8_v21.13:tagname
+
 
 Author
 -------
