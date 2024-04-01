@@ -1,10 +1,10 @@
 FROM php:8.3-apache
 
-LABEL maintainer="Marcos A Paliari <marcos@paliari.com.br>"
+LABEL maintainer="Mario Uribe <m@urib.es>"
 
-ADD oracle/12/instantclient-basic-linux.x64-12.2.0.1.0.tar.gz /usr/local
-ADD oracle/12/instantclient-sdk-linux.x64-12.2.0.1.0.tar.gz /usr/local
-ADD oracle/12/instantclient-sqlplus-linux.x64-12.2.0.1.0.tar.gz /usr/local
+ADD oracle/21/instantclient-basic-linux.x64-21.13.0.0.0dbru.zip /usr/local
+ADD oracle/21/instantclient-sdk-linux.x64-21.13.0.0.0dbru.zip /usr/local
+ADD oracle/21/instantclient-sqlplus-linux.x64-21.13.0.0.0dbru.zip /usr/local
 
 RUN apt-get update && apt-get -y install libzip-dev \
   && ln -s /usr/local/instantclient_12_2 /usr/local/instantclient \
