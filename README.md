@@ -38,6 +38,7 @@ readline
 Reflection
 session
 SimpleXML
+soap
 sodium
 SPL
 sqlite3

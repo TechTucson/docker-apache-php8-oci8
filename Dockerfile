@@ -44,6 +44,13 @@ RUN apt-get update \
     && docker-php-ext-configure ldap --with-libdir=lib/x86_64-linux-gnu/ \
     && docker-php-ext-install ldap
 
+#Install SOAP
+RUN apt-get update && \
+    apt-get install -y libxml2-dev
+
+RUN docker-php-ext-install soap
+
+
 WORKDIR /var/www/html
 
 COPY apache/000-default.conf /etc/apache2/sites-available/000-default.conf
