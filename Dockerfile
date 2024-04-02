@@ -36,6 +36,14 @@ RUN echo 'instantclient,/opt/oracle/instantclient_21_13/' | pecl install oci8 \
        && docker-php-ext-install \
                pdo_oci 
 			  
+# Install LDAP
+
+RUN apt-get update \
+    && apt-get install libldap2-dev -y \
+    && docker-php-ext-install ldap \
+    && docker-php-ext-configure ldap --with-libdir=lib/x86_64-linux-gnu/ \
+    && docker-php-ext-install ldap
+
 WORKDIR /var/www/html
 
 COPY apache/000-default.conf /etc/apache2/sites-available/000-default.conf
