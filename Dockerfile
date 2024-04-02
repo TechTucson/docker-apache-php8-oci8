@@ -1,9 +1,11 @@
 FROM php:8.3.4-apache
 
-RUN apt-get update && apt-get install -qqy unzip  \
-         && apt-get clean autoclean && apt-get autoremove --yes &&  rm -rf /var/lib/{apt,dpkg,cache,log}/ 
+RUN apt-get update && apt-get install -qqy git unzip libfreetype6-dev \
+        libjpeg62-turbo-dev \
+        libpng-dev \
+        libaio1 wget && apt-get clean autoclean && apt-get autoremove --yes &&  rm -rf /var/lib/{apt,dpkg,cache,log}/ 
 #composer
-# RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 # ORACLE oci 
 RUN mkdir /opt/oracle \
@@ -21,7 +23,7 @@ RUN unzip /opt/oracle/instantclient-sqlplus-linux.x64-21.13.0.0.0dbru.zip -d /op
 #RUN ln -s /opt/oracle/instantclient_21_13/libclntshcore.so.21.1 /opt/oracle/instantclient_21_13/libclntshcore.so
 #RUN ln -s /opt/oracle/instantclient_21_13/libocci.so.21.1 /opt/oracle/instantclient_21_13/libocci.so
 RUN rm -rf /opt/oracle/*.zip
-RUN apt-get remove wget
+RUN apt-get remove wget -y
 RUN apt remove unzip -y
     
 ENV LD_LIBRARY_PATH  /opt/oracle/instantclient_21_13:${LD_LIBRARY_PATH}
@@ -30,7 +32,7 @@ ENV LD_LIBRARY_PATH  /opt/oracle/instantclient_21_13:${LD_LIBRARY_PATH}
 RUN echo 'instantclient,/opt/oracle/instantclient_21_13/' | pecl install oci8 \ 
       && docker-php-ext-enable \
                oci8 \ 
-       && docker-php-ext-configure pdo_oci --with-pdo-oci=instantclient,/opt/oracle/instantclient_21_13,21.13 \
+       && docker-php-ext-configure pdo_oci --with-pdo-oci=instantclient,/opt/oracle/instantclient_21_13,21.1 \
        && docker-php-ext-install \
                pdo_oci 
 			  
