@@ -68,6 +68,13 @@ docker pull techtucson/apache_php8.3_oci8_v21.13:latest
 
 [https://github.com/TechTucson/docker-apache-php8-oci8/tree/main/sample](https://github.com/TechTucson/docker-apache-php8-oci8/tree/main/sample)
 
+## Licensing
+- This container has and I don't believe requires a license. Thought you should check to see the software and libraries used within:
+  - https://www.oracle.com/downloads/licenses/instant-client-lic.html
+  - https://httpd.apache.org/docs/2.4/license.html
+  - https://www.php.net/license/index.php
+  - Please practice due diligence and due-care 
+
 Author
 -------
 
